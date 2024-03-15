@@ -6,7 +6,7 @@
     <title>Interface</title>
     <style></style>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.js"></script>
-    <script src="/main.js"></script>
+    <script src="/contratos.js"></script>
     <script src="/contratos/contratoUm.js"></script>
     <script src="/contratos/contratoDois.js"></script>
     <script src="/contratos/contratoTres.js"></script>
@@ -14,10 +14,12 @@
     <script src="/contratos/contratoCinco.js"></script>
     <style>
       body {
-        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
         width: 100vw;
-        background-color:white;
+        margin: 0;
       }
     </style>
   </head>
@@ -25,8 +27,12 @@
     <script type="text/javascript">
       const config = {
         type: Phaser.AUTO,
+        scale: {
+          mode: Phaser.Scale.SMOOTH
+        },
         width: innerWidth, // largura da tela do jogo
         height: innerHeight, // altura da tela do jogo
+        backgroundColor: "#FFFFFF",
         physics: {
           default: "arcade",
           arcade: {
