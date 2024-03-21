@@ -8,16 +8,20 @@ class ContratoCinco extends Phaser.Scene {
     this.load.image("pastas", "assets/pasta.png");
     this.load.image("check", "assets/check.png");
     this.load.image("deny", "assets/deny.png");
-    this.load.image("fornecedor5", "assets/fornecedores/fornecedorSprite_5.png");
+    this.load.image(
+      "fornecedor5",
+      "assets/fornecedores/fornecedorSprite_5.png"
+    );
   }
 
   create() {
-    this.add.image(640, 300, "notebook").setScale(0.7);
+    this.add.image(larguraJogo / 2, alturaJogo / 2, "notebook").setScale(2);
 
-    this.add.rectangle(640, 230, 240, 260, "#F5F5DC");
-    this.add.rectangle(570, 210, 50, 50, 0xffffff).setScale(1.5);
+    const retanguloContrato = this.add.rectangle(640, 230, 240, 260, 0xffffff);
+    const retanguloFoto = this.add.rectangle(570, 210, 50, 50, 0xffffff).setScale(1.5);
+    retanguloFoto.setStrokeStyle(0.5, 0x000000);
 
-    this.add.image(570, 200, "fornecedor5").setScale(2);
+    const fornecedor5 = this.add.image(570, 200, "fornecedor5").setScale(2);
 
     this.check = this.add.image(675, 410, "check").setScale(6);
     this.check.setInteractive();
@@ -33,7 +37,10 @@ class ContratoCinco extends Phaser.Scene {
       this.scene.start("Contratos");
     });
 
-    this.add.text(590, 110, "Contrato", { fontSize: "20px", color: "#FFFFFF" });
+    const text = this.add.text(590, 110, "Contrato", { fontSize: "20px", color: "#000000" });
+
+    let arrayContrato5 = [retanguloContrato, retanguloFoto, text, fornecedor5, this.check, this.deny];
+    this.add.container(larguraJogo / 6, alturaJogo / 10, arrayContrato5);
   }
 
   update() {}

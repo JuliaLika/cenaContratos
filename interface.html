@@ -25,13 +25,15 @@
   </head>
   <body>
     <script type="text/javascript">
+      larguraJogo = innerWidth;
+      alturaJogo = innerHeight;
       const config = {
         type: Phaser.AUTO,
         scale: {
           mode: Phaser.Scale.SMOOTH
         },
-        width: innerWidth, // largura da tela do jogo
-        height: innerHeight, // altura da tela do jogo
+        width: larguraJogo, // largura da tela do jogo
+        height: alturaJogo, // altura da tela do jogo
         backgroundColor: "#FFFFFF",
         physics: {
           default: "arcade",
